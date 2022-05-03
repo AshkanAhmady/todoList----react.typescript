@@ -1,0 +1,49 @@
+form.todoForm {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form.todoForm input {
+  border: none;
+  border-bottom: 2px solid #10b981;
+  padding: 3px 7px;
+  margin-right: 5px;
+  outline: none;
+}
+
+form.todoForm input:focus {
+  border-bottom: 5px solid #10b981;
+}
+
+form.todoForm button {
+  background-color: transparent;
+  border: 2px solid #047857;
+  color: #047857;
+  padding: 3px 15px;
+  border-radius: 3px;
+}
+
+form.todoForm button:hover {
+  background-color: #047857;
+  color: #fff;
+}
+
+form.editForm {
+  display: flex;
+  box-shadow: 0 0 10px 1px #cffafe;
+  width: 100%;
+  margin: 20px 0;
+  padding: 10px 15px;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
+  border: 2px solid #059669;
+}
+
+@media (max-width: 500px) {
+  form.editForm input {
+    width: 60%;
+  }
+}

@@ -1,0 +1,92 @@
+.nav {
+  width: 50rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.nav.upgraded {
+  justify-content: space-between;
+}
+
+.nav .uncompleteds {
+  display: flex;
+  align-items: center;
+}
+
+.nav .uncompleteds span {
+  margin-right: 5px;
+}
+
+.nav .uncompleteds span.number {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  background-color: #059669;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav .uncompleteds p {
+  display: inline-block;
+  border-radius: 5px;
+  background-color: blueviolet;
+  color: #fff;
+  padding: 3px 10px;
+  margin-right: 5px;
+}
+
+.nav .options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav .options .filter {
+  width: 10rem;
+  margin-left: 10px;
+}
+
+@media (max-width: 930px) {
+  h1,
+  h2 {
+    font-size: 1.7rem !important;
+  }
+  p,
+  strong,
+  li,
+  span,
+  button,
+  input,
+  select,
+  div {
+    font-size: 1rem !important;
+  }
+
+  .nav {
+    width: 90%;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .nav .options {
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .nav .options {
+    flex-direction: column;
+  }
+
+  .nav .options .filter {
+    width: 100%;
+    margin: 0;
+    margin-top: 10px;
+  }
+}

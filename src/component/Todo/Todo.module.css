@@ -1,0 +1,102 @@
+.todo {
+  display: flex;
+  box-shadow: 0 0 10px 1px #cffafe;
+  width: 35rem;
+  margin: 20px 0;
+  padding: 5px;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
+  border: 2px solid #059669;
+}
+
+.todo > div {
+  font-size: 25px;
+  color: #000;
+}
+
+.todo > div button {
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 15px;
+  margin: 5px;
+}
+
+.todo > div button.delete {
+  background-color: transparent;
+  color: #be123c;
+  border: 2px solid #be123c;
+}
+
+.todo > div button.delete:hover {
+  color: #fff;
+  background-color: #be123c;
+}
+
+.todo > div button.complete,
+.todo > div button.edit {
+  background-color: transparent;
+  color: #8b5cf6;
+  border: 2px solid #8b5cf6;
+}
+
+.todo > div button.complete:hover,
+.todo > div button.edit:hover {
+  color: #fff;
+  background-color: #8b5cf6;
+}
+
+.todo.completedLi {
+  border: 2px solid #c7e9de;
+}
+
+.todo.completedLi > div button.delete {
+  color: #f3a4b7;
+  border: 2px solid #f3a4b7;
+}
+
+.todo.completedLi > div button.delete:hover {
+  color: #fff;
+  background-color: #f3a4b7;
+}
+
+.todo.completedLi > div button.complete,
+.todo.completedLi > div button.edit {
+  background-color: transparent;
+  color: #c3adf7;
+  border: 2px solid #c3adf7;
+}
+
+.todo.completedLi > div button.complete:hover,
+.todo.completedLi > div button.edit:hover {
+  color: #fff;
+  background-color: #c3adf7;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: #94a3b8 !important;
+}
+
+@media (max-width: 930px) {
+  .todo {
+    width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .todo {
+    flex-direction: column;
+    margin: 20px 0 0 0;
+  }
+
+  .todo > div {
+    margin: 5px 0;
+  }
+
+  .todo > div button {
+    padding: 3px 10px;
+    margin: 3px;
+  }
+}

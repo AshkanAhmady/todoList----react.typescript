@@ -1,0 +1,19 @@
+.app {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  flex-direction: column;
+}
+
+.app h1 {
+  font-size: 3rem;
+  font-weight: 500;
+}
+
+@media (max-width: 470px) {
+  .app {
+    padding: 10px 0;
+  }
+}
