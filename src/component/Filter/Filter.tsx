@@ -1,5 +1,5 @@
-import { useState } from "react";
 import Select from "react-select";
+import { FilterComponentProps } from "../../Interfaces";
 
 const options = [
   { value: "All", label: "All" },
@@ -7,9 +7,9 @@ const options = [
   { value: "Completed", label: "Completed" },
 ];
 
-const Filter = (props) => {
+const Filter: React.FC<FilterComponentProps> = (props) => {
   // selectedOption is default value in react-select
-  const filterHandler = (selectedOption) => {
+  const filterHandler = (selectedOption: any) => {
     props.todosFilter(selectedOption);
   };
 

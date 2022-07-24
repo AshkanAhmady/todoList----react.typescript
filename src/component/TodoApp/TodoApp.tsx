@@ -3,12 +3,13 @@ import styles from "./TodoApp.module.css";
 import TodoForm from "../TodoForm/TodoForm";
 import TodoList from "../TodoList/TodoList";
 import Nav from "../Nav/Nav";
+import { TodoInterface } from "../../Interfaces";
 
 const TodoApp = () => {
   // تمام تودو ها در ایننجا بصورت آرایه جمع آوری میشه
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState<any[]>([]);
   // یک استیت کمکی برای نمایش تودو های فیلتر شده
-  const [filteredTodos, setFilteredTodos] = useState([]);
+  const [filteredTodos, setFilteredTodos] = useState<any[]>([]);
   // this state is for select box
   const [filter, setFilter] = useState({ value: "All", label: "All" });
 
@@ -17,7 +18,7 @@ const TodoApp = () => {
     todosFilterHandler(filter);
   }, [todos]);
 
-  const submitTodo = (input) => {
+  const submitTodo = (input: string) => {
     const newTodo = {
       id: Math.floor(Math.random() * 1000),
       text: input,
@@ -26,8 +27,8 @@ const TodoApp = () => {
     setTodos([...todos, newTodo]);
   };
 
-  const completeTodo = (id) => {
-    const cloneTodos = [...todos];
+  const completeTodo = (id: number) => {
+    const cloneTodos: TodoInterface[] = [...todos];
     const index = cloneTodos.findIndex((todo) => todo.id === id);
     const todo = { ...cloneTodos[index] };
 
@@ -37,13 +38,13 @@ const TodoApp = () => {
     setTodos(cloneTodos);
   };
 
-  const deleteTodo = (id) => {
+  const deleteTodo = (id: number) => {
     const updatedTodos = todos.filter((todo) => todo.id !== id);
     setTodos(updatedTodos);
   };
 
-  const updateTodo = (newValue, id) => {
-    const cloneTodos = [...todos];
+  const updateTodo = (newValue: string, id: number) => {
+    const cloneTodos: TodoInterface[] = [...todos];
     const index = cloneTodos.findIndex((todo) => todo.id === id);
     const todo = { ...cloneTodos[index] };
 
@@ -53,7 +54,7 @@ const TodoApp = () => {
     setTodos(cloneTodos);
   };
 
-  const todosFilterHandler = (selectedOption) => {
+  const todosFilterHandler = (selectedOption: {value: string, label: string}) => {
     switch (selectedOption.value) {
       case "All": {
         setFilteredTodos(todos);

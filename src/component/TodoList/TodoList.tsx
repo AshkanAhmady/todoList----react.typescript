@@ -2,14 +2,15 @@ import styles from "./TodoList.module.css";
 import Todo from "../Todo/Todo";
 import TodoForm from "../TodoForm/TodoForm";
 import { useState } from "react";
+import { TodoListComponentProps } from "../../Interfaces";
 
-const TodoList = ({ todos, onComplete, onDelete, updateTodo }) => {
+const TodoList: React.FC<TodoListComponentProps> = ({ todos, onComplete, onDelete, updateTodo }) => {
   // این استیت برای این است که بفهمیم روی ادیت کلیک شده
-  const [edit, setEdit] = useState({ id: null, text: "", isComplete: false });
+  const [edit, setEdit] = useState({ id: 0, text: "", isComplete: false });
 
-  const editTodo = (newValue) => {
+  const editTodo = (newValue: string) => {
     updateTodo(newValue, edit.id);
-    setEdit({ id: null, text: "", isComplete: false });
+    setEdit({ id: 0, text: "", isComplete: false });
   };
 
   const renderTodos = () => {

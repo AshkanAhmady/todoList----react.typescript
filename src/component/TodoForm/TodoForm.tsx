@@ -1,20 +1,21 @@
 import styles from "./TodoForm.module.css";
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { TodoFormComponentProps } from "../../Interfaces";
 
-const TodoForm = (props) => {
+const TodoForm: React.FC<TodoFormComponentProps> = (props) => {
   const [input, setInput] = useState(props.edit ? props.edit.text : "");
-  const inputRef = useRef();
+  const inputRef = useRef<HTMLInputElement>(null);
 
   // mounting method
   useEffect(() => {
-    inputRef.current.focus();
+    inputRef.current!.focus();
   }, []);
 
-  const changeHandler = (e) => {
-    setInput(e.target.value);
+  const changeHandler = (e: React.FormEvent<HTMLInputElement>) => {
+    setInput(e.currentTarget.value);
   };
 
-  const submitHandler = (e) => {
+  const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!input) {
       alert("Please Fill The Input");
